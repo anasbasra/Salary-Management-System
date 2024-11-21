@@ -1,0 +1,211 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #1e3c72, #2a5298, #6b5b95);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+.header {
+    background: rgba(77, 3, 3, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.header:hover {
+    transform: scale(1.05);
+}
+
+.header h1 {
+    background: linear-gradient(to right, #283c86, #667db6, #8e44ad);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    font-style: italic;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease, transform 0.2s;
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #67e6dc;
+    transform: scale(1.1);
+}
+
+/* Container and Forms */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.form-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    color: white;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #67e6dc;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder, select {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #67e6dc;
+    transform: scale(1.05);
+}
+
+button {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(32, 50, 80, 0.9);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px #8e44ad, 0 0 15px #8e44ad, 0 0 20px #8e44ad;
+    }
+    to {
+        text-shadow: 0 0 20px #667db6, 0 0 30px #667db6, 0 0 40px #667db6;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+}

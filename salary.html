@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Salary Management System</h1>
+        <nav class="navbar">
+            <a href="#employee-form">Employee Form</a>
+            <a href="#salary-form">Salary Form</a>
+            <a href="#payment-form">Payment Form</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Employee Form -->
+        <section id="employee-form" class="form-section">
+            <h2>Employee Form</h2>
+            <form id="employeeForm">
+                <label>Employee ID: <input type="text" id="empID" required></label>
+                <label>Name: <input type="text" id="empName" required></label>
+                <label>Department: <input type="text" id="empDept" required></label>
+                <button type="button" onclick="saveEmployee()">Save Employee</button>
+                <button type="button" onclick="searchEmployee()">Search Employee</button>
+            </form>
+            <p id="searchResult" style="color: green; margin-top: 10px;"></p>
+            <div id="employeeDetails" style="margin-top: 15px;"></div> <!-- Added to display employee details -->
+        </section>
+
+        <!-- Salary Form -->
+        <section id="salary-form" class="form-section">
+            <h2>Salary Form</h2>
+            <form id="salaryForm">
+                <label>Employee ID: <input type="text" id="salaryEmpID" required></label> <!-- Added employee ID for salary -->
+                <label>Basic Salary: <input type="number" id="basicSalary" required></label>
+                <label>HRA: <input type="number" id="hra" required></label>
+                <label>Bonus: <input type="number" id="bonus"></label>
+                <label>Deductions: <input type="number" id="deductions"></label>
+                <label>Net Salary: <input type="number" id="netSalary" readonly></label>
+                <button type="button" onclick="calculateNetSalary()">Calculate Salary</button>
+                <button type="button" onclick="saveSalary()">Save Salary</button> <!-- Save salary button -->
+            </form>
+        </section>
+
+        <!-- Payment Form -->
+        <section id="payment-form" class="form-section">
+            <h2>Payment Form</h2>
+            <form id="paymentForm">
+                <label>Employee ID: <input type="text" id="payEmpID" required></label>
+                <label>Payment Amount: <input type="number" id="paymentAmount" required></label>
+                <label>Payment Mode: 
+                    <select id="paymentMode" required>
+                        <option value="Bank">Bank</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </label>
+                <button type="button" onclick="savePayment()">Save Payment</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
